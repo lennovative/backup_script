@@ -9,6 +9,19 @@ fi
 SOURCE_DIR="$1"
 DESTINATION_DIR="$2"
 
+# Check if source and destination directories exist
+if [ ! -d "$SOURCE_DIR" ]; then
+    echo "Source directory '$SOURCE_DIR' does not exist."
+    exit 1
+fi
+
+if [ ! -d "$DESTINATION_DIR" ]; then
+    echo "Destination directory '$DESTINATION_DIR' does not exist."
+    exit 1
+fi
+
+echo "Start backup: '$SOURCE_DIR' to '$DESTINATION_DIR'"
+
 # Set options for rsync dry run
 DRY_RUN_OPTIONS="-avn --progress --no-perms --delete"
 
