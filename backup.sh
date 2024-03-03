@@ -10,10 +10,10 @@ SOURCE_DIR="$1"
 DESTINATION_DIR="$2"
 
 # Set options for rsync dry run
-DRY_RUN_OPTIONS="-avn --progress --delete"
+DRY_RUN_OPTIONS="-avn --progress --no-perms --delete"
 
 # Set options for rsync actual run
-RUN_OPTIONS="-av --progress --delete"
+RUN_OPTIONS="-av --progress --no-perms --delete"
 
 # Perform dry run
 echo "Performing dry run..."
