@@ -35,12 +35,12 @@ RUN_OPTIONS="-av --progress --no-perms --delete"
 echo "Performing dry run..."
 rsync $RUN_OPTIONS --dry-run "$SOURCE_DIR" "$DESTINATION_DIR"
 
-# Perform dry run if specified
+# Exit when in dry run only mode
 if [ "$DRY_RUN" = true ]; then
     exit
 fi
 
-# Prompt for confirmation
+# Prompt for confirmation to start backup
 read -p "Proceed backup? (y/n): " choice
 case "$choice" in
   y|Y ) 
